@@ -10,14 +10,14 @@
   </head>
   <body>
     <div class="container-fluid">
-        <% if(success !=''){%>
-        <div class="alert alert-success">
-            <strong>Success!</strong><%= success%>.
-          </div>
-          <%}%>
-    <h1 style="margin: 50px auto; text-align: center; font-size: 24px;"><%= title %></h1>
+              <% if(success !=''){%>
+                 <div class="alert alert-success">
+                 <strong>Success!</strong><%= success%>.
+                 </div>
+              <%}%>
+                 <h1 style="margin: 50px auto; text-align: center; font-size: 24px;"><%= title %></h1>
 
-    <div class="container">
+            <div class="container">
       <div class="row">
           <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
               <div class="panel panel-info">
@@ -53,7 +53,19 @@
 
     </div>
      </div>
-  </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <%if(records.length >0){%>
+                        <% records.forEach(function(row){%>
+                            <div class="col-sm-4">
+                                <img src="./uploads/<%= row.imagename %>" alt="image" style="width: 380px; height:250px;margin: 5px auto;">
+                            </div>
+    
+                       <% }) } %>
+                </div>
+            </div>
 
  </div> 
   </body>
